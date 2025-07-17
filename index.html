@@ -39,14 +39,7 @@
       <a href="#">Contact</a>
     </div>
 
-<button class="donate-btn" id="donateNowBtn">Donate Now</button>
-
-<!-- Loader Overlay -->
-<div id="loader" class="loader hidden">
-  <div class="spinner"></div>
-  <span class="loader-text">Haribol ✨🙌</span>
-</div>
-
+<a href="qr.html"><button class="donate-btn">Donate Now</button></a>
 
   </div>
 
@@ -166,17 +159,5 @@
     mobileMenu.classList.add("hidden");
   });
 </script>
-<script>
-  const donateBtn = document.getElementById('donateNowBtn');
-  const loader = document.getElementById('loader');
-
-  donateBtn.addEventListener('click', () => {
-    loader.classList.remove('hidden');
-    setTimeout(() => {
-      window.location.href = 'qr.html';
-    }, 2000); // Delay before redirect
-  });
-</script>
-
 </body>
 </html>
