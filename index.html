@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sribas Angan Bhakti Vriksha - Demo</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="top-bar">
+    <div class="social-icons">
+      <i class="fab fa-twitter"></i>
+      <i class="fab fa-facebook-f"></i>
+      <i class="fab fa-instagram"></i>
+      <i class="fab fa-telegram"></i>
+      <i class="fab fa-youtube"></i>
+    </div>
+    <div class="contact">
+      <i class="fas fa-phone"></i> +91 000-000-0000
+    </div>
+  </div>
+
+  <div class="navbar">
+    <img src="https://i.ibb.co/23hStqkk/sribas-angan-logo.png" class="logo" alt="Logo" />
+
+    <!-- Hamburger Icon for Mobile -->
+    <div class="hamburger" id="hamburger">
+      <i class="fas fa-bars"></i>
+    </div>
+
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Activities</a>
+      <a href="#">Festivals</a>
+      <a href="#">Media</a>
+      <a href="#">Shop</a>
+      <a href="#">Contact</a>
+    </div>
+
+<button class="donate-btn" id="donateNowBtn">Donate Now</button>
+
+<!-- Loader Overlay -->
+<div id="loader" class="loader hidden">
+  <div class="spinner"></div>
+  <span class="loader-text">Haribol ✨🙌</span>
+</div>
+
+
+  </div>
+
+  <!-- Fullscreen Mobile Menu -->
+<div class="mobile-menu hidden" id="mobileMenu">
+  <div class="mobile-menu-header">
+    <img src="https://i.ibb.co/23hStqkk/sribas-angan-logo.png" class="menu-logo" alt="Logo">
+    <div class="close-btn" id="closeMobileBtn">&times;</div>
+  </div>
+  <div class="mobile-nav-links">
+    <a href="#"><span>Home</span></a>
+    <a href="#"><span>About</span><i class="fas fa-chevron-right"></i></a>
+    <a href="#"><span>Temple</span><i class="fas fa-chevron-right"></i></a>
+    <a href="#"><span>Activities</span><i class="fas fa-chevron-right"></i></a>
+    <a href="#"><span>Festivals</span><i class="fas fa-chevron-right"></i></a>
+    <a href="#"><span>Contact Us</span><i class="fas fa-chevron-right"></i></a>
+    <a href="#"><span>Media</span><i class="fas fa-chevron-right"></i></a>
+    <a href="#"><span>Shop</span><i class="fas fa-chevron-right"></i></a>
+    <a href="#"><span>Utilities</span><i class="fas fa-chevron-right"></i></a>
+  </div>
+</div>
+
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Welcome to Sribas Angan Bhakti Vriksha</h1>
+      <p>Spiritual Growth. Devotion. Community. (Demo Content)</p>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="container">
+      <div class="text">
+        <h2>About Us</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+        <p>We are dedicated to promoting devotion, community service, and spiritual awareness. Our mission is to uplift hearts and spread positivity.</p>
+      </div>
+      <div class="image">
+        <img src="https://i.ibb.co/NnJq693K/Whats-App-Image-2021-07-10-at-9-52-58-AM.jpg" alt="Demo image">
+      </div>
+    </div>
+  </section>
+
+  <section class="services">
+    <h2>What Makes Us Unique</h2>
+    <div class="service-items">
+      <div class="service">
+        <h3>We Educate</h3>
+        <p>We offer spiritual and cultural education to all age groups with workshops, classes, and community outreach.</p>
+      </div>
+      <div class="service">
+        <h3>We Serve</h3>
+        <p>Through various charitable events and support programs, we uplift the underprivileged and serve society selflessly.</p>
+      </div>
+      <div class="service">
+        <h3>We Celebrate</h3>
+        <p>Our community rejoices in festivals, kirtans, and spiritual gatherings to keep the devotional flame alive.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-links">
+      <a href="#">Home</a>
+      <a href="#about">About</a>
+      <a href="#">Activities</a>
+      <a href="#">Donate</a>
+      <a href="#">Contact</a>
+    </div>
+    <p>&copy; 2025 Sribas Angan Bhakti Vriksha. All rights reserved.</p>
+  </footer>
+
+  <!-- Modal -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h2>Service Title</h2>
+      <p>This is more detailed information about this service or offering. You can replace this text later.</p>
+    </div>
+  </div>
+  <!-- Modal Script -->
+  <script>
+    const modal = document.getElementById("modal");
+    const closeModalBtn = document.querySelector("#modal .close-btn");
+    const services = document.querySelectorAll(".service");
+
+    services.forEach(service => {
+      service.addEventListener("click", () => {
+        modal.classList.remove("hidden");
+      });
+    });
+
+    closeModalBtn.addEventListener("click", () => {
+      modal.classList.add("hidden");
+    });
+
+    window.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.classList.add("hidden");
+      }
+    });
+  </script>
+
+  <!-- Hamburger Menu Script -->
+<script>
+  const hamburger = document.getElementById("hamburger");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const closeMobileBtn = document.getElementById("closeMobileBtn");
+
+  hamburger.addEventListener("click", () => {
+    mobileMenu.classList.remove("hidden");
+    mobileMenu.classList.add("show");
+  });
+
+  closeMobileBtn.addEventListener("click", () => {
+    mobileMenu.classList.remove("show");
+    mobileMenu.classList.add("hidden");
+  });
+</script>
+<script>
+  const donateBtn = document.getElementById('donateNowBtn');
+  const loader = document.getElementById('loader');
+
+  donateBtn.addEventListener('click', () => {
+    loader.classList.remove('hidden');
+    setTimeout(() => {
+      window.location.href = 'qr.html';
+    }, 2000); // Delay before redirect
+  });
+</script>
+
+</body>
+</html>
