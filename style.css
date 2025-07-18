@@ -33,29 +33,67 @@ body {
   margin-right: 10px;
 }
 
-/* Navbar (Single, Clean Version) */
+/* Navbar */
 .navbar {
   position: relative;
   width: 100%;
-  top: 0;
-  left: 0;
   background-color: var(--golden-bronze);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px 30px;
   z-index: 999;
-  transition: top 0.3s ease-in-out;
 }
-.nav-links a:hover {
-  box-shadow: 0 -2px 0 #fff inset,
-  500px 0 0 rgba(255,255,255,0.03) inset;
-  padding: 10px 10px 10px 15px;
-}
+
 .navbar img.logo {
   height: 60px;
 }
 
+/* Hamburger Centered */
+.hamburger-wrapper {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hamburger {
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.menu-label {
+  margin-left: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+}
+
+/* Donate Button */
+.donate-btn {
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--deep-red);
+  border-radius: 30px;
+  color: var(--deep-red);
+  font-weight: bold;
+  background: transparent;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.donate-btn:hover {
+  background-color: var(--deep-red);
+  color: white;
+}
+
+/* Nav Links */
 .nav-links {
   display: flex;
   gap: 20px;
@@ -68,22 +106,12 @@ body {
   font-weight: bold;
 }
 
-.donate-btn {
-  padding: 0.5rem 1rem;
-  border: 2px solid var(--deep-red);
-  border-radius: 30px;
-  color: var(--deep-red);
-  font-weight: bold;
-  background: transparent;
-  cursor: pointer;
+.nav-links a:hover {
+  box-shadow: 0 -2px 0 #fff inset, 500px 0 0 rgba(255,255,255,0.03) inset;
+  padding: 10px 10px 10px 15px;
 }
 
-.donate-btn:hover {
-  background-color: var(--deep-red);
-  color: white;
-}
-
-/* Hero Section */
+/* Hero */
 .hero {
   background-image: url('https://i.ibb.co/99s8HJqh/Katyan-Art-Shop-Redbubble.jpg');
   background-size: cover;
@@ -100,7 +128,7 @@ body {
   content: "";
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background-color: rgba(244, 228, 9, 0.6); /* Yellow overlay */
+  background-color: rgba(244, 228, 9, 0.6);
 }
 
 .hero-content {
@@ -210,9 +238,11 @@ body {
   align-items: center;
   z-index: 1000;
 }
+
 .modal.hidden {
   display: none;
 }
+
 .modal-content {
   background: #fff;
   padding: 2rem;
@@ -222,6 +252,7 @@ body {
   position: relative;
   box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
+
 .close-btn {
   position: absolute;
   top: 10px;
@@ -231,7 +262,7 @@ body {
   color: #333;
 }
 
-/* Fullscreen overlay fallback */
+/* Mobile Menu */
 .mobile-menu {
   position: fixed;
   top: 0;
@@ -275,7 +306,7 @@ body {
   justify-content: center;
 }
 
-/* Navigation Links */
+/* Mobile Nav Links */
 .mobile-nav-links {
   display: flex;
   flex-direction: column;
@@ -330,15 +361,6 @@ footer .footer-links a:hover {
     display: none;
   }
 
-  .hamburger {
-    display: block;
-  }
-
-  .donate-btn {
-    position: absolute;
-    right: 60px;
-  }
-
   .hero-content h1 {
     font-size: 2rem;
   }
@@ -354,5 +376,25 @@ footer .footer-links a:hover {
 
   .about .container {
     flex-direction: column;
+  }
+
+  .donate-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 0.85rem;
+  }
+
+  .hamburger-wrapper {
+    top: 18px;
+  }
+
+  .menu-label {
+    font-size: 0.95rem;
+  }
+}
+@media (min-width: 769px) {
+  .hamburger-wrapper {
+    display: none;
   }
 }
