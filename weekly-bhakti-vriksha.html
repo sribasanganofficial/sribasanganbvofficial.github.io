@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weekly Bhakti Vriksha</title>
+  <link rel="stylesheet" href="activities.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <div class="navbar">
+    <div class="nav-title">Sribas Angan Bhakti Vriksha</div>
+    <a href="index.html" class="back-button">← Back to Home</a>
+  </div>
+
+  <!-- Page Title -->
+  <section class="page-title">
+    <h1>Weekly Bhakti Vriksha</h1>
+  </section>
+
+  <!-- Slideshow Section -->
+  <section class="slideshow-section">
+    <div class="slideshow-container">
+      <div class="slide fade"><img src="images/activity1.jpg" alt="Activity Image 1"></div>
+      <div class="slide fade"><img src="images/activity2.jpg" alt="Activity Image 2"></div>
+      <div class="slide fade"><img src="images/activity3.jpg" alt="Activity Image 3"></div>
+    </div>
+  </section>
+
+  <!-- Activity Information -->
+  <section class="activity-info">
+    <h2><a href="#form-section" class="join-now-btn">Click here to Join Now</a></h2>
+    <div class="activity-item">
+      <p>The Bhakti Vriksha program, rooted in the teachings of ISKCON, is a dynamic and structured system designed to help devotees grow spiritually in a warm, home-based setting. The name "Bhakti Vriksha" literally means "the tree of devotion." Just like a tree grows with roots, branches, and leaves, each devotee group multiplies and expands organically, spreading bhakti far and wide.</p>
+      <p>Weekly gatherings usually take place in devotees' homes and include soul-stirring kirtans, introspective japa chanting, engaging discussions from the Bhagavad Gita and Srimad Bhagavatam, and sumptuous prasadam. These sessions help create a close-knit family atmosphere, giving everyone—from newcomers to initiated devotees—a chance to share, serve, and spiritually thrive.</p>
+      <p>The program’s format is simple yet potent: devotees come together for six essential elements — association, congregational chanting, japa, scriptural discussion, personal development sharing, and prasadam. It provides an ideal space for spiritual friendship, mentorship, and gradual elevation through personal transformation and service.</p>
+      <p>Designed to be scalable and self-replicating, Bhakti Vriksha groups can split and multiply when they grow beyond a certain size, making it an effective model for congregational expansion while preserving intimacy. It empowers householders, youth, and newcomers to become spiritually active and involved in Krishna Consciousness from their own homes.</p>
+    </div>
+  </section>
+
+  <!-- Form Section -->
+  <section class="form-section" id="form-section">
+    <h3>Join Weekly Bhakti Vriksha</h3>
+    <p>We're grateful for your interest in joining our Bhakti-Vriksha family! This simple confidential form will connect you with a like-minded devotional group in your local area, where caring guidance and spiritual growth await.</p>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfSd8Z5yJ-lwRFhEJwmm2yoYOCAldQJxq472u_9Ai4I09vuvg/viewform?embedded=true" width="100%" height="1800" frameborder="0" style="border:none; overflow:hidden;">Loading…</iframe>
+  </section>
+
+  <!-- Slideshow Script -->
+  <script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      let slides = document.getElementsByClassName("slide");
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) { slideIndex = 1; }
+      slides[slideIndex - 1].style.display = "block";
+      setTimeout(showSlides, 3000);
+    }
+  </script>
+
+</body>
+</html>
