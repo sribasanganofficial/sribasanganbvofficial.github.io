@@ -6,6 +6,9 @@
   <title>Sribas Angan Bhakti Vriksha - Demo</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
+  <!-- AOS CSS -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
 </head>
 <body>
   <div class="top-bar">
@@ -103,6 +106,54 @@
       </div>
     </div>
   </section>
+<section class="activities-modern">
+  <h2>Spiritual & Cultural Activities</h2>
+  <div class="timeline">
+    <div class="timeline-item" data-aos="fade-up">
+      <div class="icon"><i class="fas fa-hands-praying"></i></div>
+      <div class="content">
+        <h3>Weekly Bhakti Vriksha</h3>
+        <p>Regular spiritual gatherings with kirtans, Bhagavad Gita discussions, and prasadam sharing in devotees' homes.</p>
+      </div>
+    </div>
+    <div class="timeline-item" data-aos="fade-right">
+      <div class="icon"><i class="fas fa-gopuram"></i></div>
+      <div class="content">
+        <h3>Festival Celebrations</h3>
+        <p>Joyful observances of Gaura Purnima, Janmashtami, Ratha Yatra and more with devotion and grandeur.</p>
+      </div>
+    </div>
+    <div class="timeline-item" data-aos="zoom-in">
+      <div class="icon"><i class="fas fa-utensils"></i></div>
+      <div class="content">
+        <h3>Sunday Love Feast</h3>
+        <p>Weekly spiritual festivals with bhajans, lectures, drama, and free prasadam for all visitors.</p>
+      </div>
+    </div>
+    <div class="timeline-item" data-aos="fade-left">
+      <div class="icon"><i class="fas fa-book"></i></div>
+      <div class="content">
+        <h3>Spiritual Library</h3>
+        <p>Access a wide range of Vedic literature including Bhagavad Gita, Srimad Bhagavatam, and books by Srila Prabhupada.</p>
+      </div>
+    </div>
+    <div class="timeline-item" data-aos="flip-up">
+      <div class="icon"><i class="fas fa-video"></i></div>
+      <div class="content">
+        <h3>Online Discourses</h3>
+        <p>Join live spiritual talks, video classes, and Q&A sessions through our YouTube and Telegram platforms.</p>
+      </div>
+    </div>
+    <div class="timeline-item" data-aos="zoom-in-up">
+      <div class="icon"><i class="fas fa-child"></i></div>
+      <div class="content">
+        <h3>Youth & Kids Programs</h3>
+        <p>Dedicated sessions for children and teens focusing on values, storytelling, and cultural arts.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 
   <footer>
     <div class="footer-links">
@@ -162,5 +213,15 @@
     mobileMenu.classList.add("hidden");
   });
 </script>
+  <!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    once: true,
+    duration: 800,
+    easing: 'ease-in-out'
+  });
+</script>
+
 </body>
 </html>
