@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spiritual & Cultural Activities</title>
+  <link rel="stylesheet" href="activities.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    :root {
+      --orange: #f08700;
+      --deep-red: #d7263d;
+      --golden: #a37c40;
+      --off-white: #fcfcfc;
+      --yellow: #f4e409;
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVIGATION -->
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index.html">
+        <img src="https://i.ibb.co/23hStqkk/sribas-angan-logo.png" alt="Sribas Angan Logo" />
+      </a>
+    </div>
+    <div class="nav-title">Spiritual & Cultural Activities</div>
+    <a href="index.html" class="back-button"><i class="fas fa-arrow-left"></i> Back</a>
+  </nav>
+
+  <!-- SLIDESHOW -->
+  <section class="slideshow-section">
+    <div class="slideshow-container">
+      <!-- Add your images below -->
+      <div class="slide fade"><img src="images/activity1.jpg" alt="Activity Image 1"></div>
+      <div class="slide fade"><img src="images/activity2.jpg" alt="Activity Image 2"></div>
+      <div class="slide fade"><img src="images/activity3.jpg" alt="Activity Image 3"></div>
+      <div class="slide fade"><img src="images/activity4.jpg" alt="Activity Image 4"></div>
+      <!-- Add up to 10 or more slides here -->
+    </div>
+  </section>
+
+  <!-- ACTIVITY INFORMATION -->
+  <section class="activity-info">
+  <h2>Our Weekly Devotional Activities</h2>
+
+  <div class="activity-item">
+    <p><strong>📘 Weekly Bhakti Vriksha:</strong>  
+    Inspired by ISKCON’s “Tree of Devotion” model, our Weekly Bhakti Vriksha gatherings are home-based spiritual meetups with a family feel. Participants come together for kirtans, discussion of Gita and Bhagavatam, mantra meditation, and sharing of sanctified prasadam. These sessions encourage moral living, satsang, and gradual devotional awakening in a nurturing environment.  
+    <a href="#form-section" class="join-now-btn">Join Bhakti Vriksha Now</a></p>
+  </div>
+
+  <div class="activity-item">
+    <p><strong>🎶 Devotional Arts & Training:</strong>  
+    Our devotional arts program blends classical music and dance with deep bhakti. Trained devotees guide you in singing kirtan, playing harmonium and mridangam, and devotional dance (nritya). These creative offerings honor Krishna’s pastimes and foster emotional expression, discipline, and spiritual refinement.  
+    <a href="#form-section" class="join-now-btn">Join Arts & Training</a></p>
+  </div>
+
+  <div class="activity-item">
+    <p><strong>🧘 Youth & Spiritual Counseling:</strong>  
+    We support young hearts and minds through interactive sessions combining Bhagavad Gita wisdom and modern life skills. Topics include stress management, leadership, time use, and character-building. Inspired by ISKCON Youth Services and FOLK programs, these sessions help youth navigate purposefully.  
+    <a href="#form-section" class="join-now-btn">Join Youth Sessions</a></p>
+  </div>
+
+  <div class="activity-item">
+    <p><strong>🎉 Festivals & Sunday Feasts:</strong>  
+    Celebrating Gaura Purnima, Janmashtami, Ratha Yatra and more brings vibrant energy to our devotees. Open-to-all Sunday Feasts include kirtan, spiritual discourse, drama or presentation followed by prasadam. It’s a festive space where community joins devotion.  
+    <a href="#form-section" class="join-now-btn">Join Festival & Feast</a></p>
+  </div>
+
+  <div class="activity-item">
+    <p><strong>📚 Kids Bhakti Club:</strong>  
+    Designed especially for children, this club offers storytelling, crafts, mantra chanting, and value-based learning rooted in Krishna Consciousness. These sessions spark devotion and moral awareness from a young age in joyful ways.  
+    <a href="#form-section" class="join-now-btn">Join Kids Bhakti Club</a></p>
+  </div>
+</section>
+
+
+  </section>
+
+  <!-- FORM SECTION -->
+  <section class="form-section" id="form-section">
+    <h3>Join Our Spiritual & Cultural Activities</h3>
+    <p>We're excited to welcome you to our growing family of bhakti practitioners! Fill out the form below to enroll in our weekly activities. Let's serve together in the loving mission of Lord Krishna.</p>
+
+    <iframe 
+      src="https://docs.google.com/forms/d/e/1FAIpQLSfSd8Z5yJ-lwRFhEJwmm2yoYOCAldQJxq472u_9Ai4I09vuvg/viewform?embedded=true" 
+      width="100%" 
+      height="1800" 
+      frameborder="0" 
+      style="border: none; overflow: hidden;">
+      Loading…
+    </iframe>
+  </section>
+
+  <script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      let slides = document.getElementsByClassName("slide");
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}
+      slides[slideIndex - 1].style.display = "block";
+      setTimeout(showSlides, 3000); // Change image every 3 seconds
+    }
+  </script>
+</body>
+</html>

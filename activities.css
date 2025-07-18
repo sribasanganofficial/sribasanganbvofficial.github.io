@@ -1,0 +1,136 @@
+/* ==== NAVIGATION ==== */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fcfcfc;
+  padding: 0.5rem 1rem;
+  border-bottom: 2px solid var(--orange);
+}
+
+.logo img {
+  height: 50px;
+}
+
+.nav-title {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: var(--golden);
+}
+
+.back-button {
+  text-decoration: none;
+  color: var(--deep-red);
+  font-weight: bold;
+}
+
+/* ==== SLIDESHOW ==== */
+.slideshow-section {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.slideshow-container {
+  position: relative;
+  max-width: 100%;
+  margin: auto;
+}
+
+.slide {
+  display: none;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* ==== ACTIVITY INFO ==== */
+.activity-info {
+  padding: 2rem;
+  background-color: #fffef9;
+  color: #333;
+  line-height: 1.7;
+}
+
+.activity-info h2 {
+  text-align: center;
+  color: var(--golden);
+  margin-bottom: 2rem;
+}
+
+.activity-item {
+  margin-bottom: 2.5rem;
+}
+
+.activity-item h3 {
+  color: var(--deep-red);
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.activity-item p {
+  font-size: 1.05rem;
+  margin-bottom: 0.75rem;
+}
+
+/* ==== JOIN NOW BUTTON ==== */
+.join-now-btn {
+  display: inline-block;
+  margin-top: 0.5rem;
+  background-color: var(--deep-red);
+  color: white;
+  padding: 0.5rem 1.2rem;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.join-now-btn:hover {
+  background-color: var(--orange);
+}
+
+/* ==== JOIN SECTION WRAPPER ==== */
+.join-link {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+/* ==== FORM SECTION ==== */
+.form-section {
+  padding: 2rem;
+  background-color: #fff8e7;
+  text-align: center;
+}
+
+.form-section h3 {
+  color: var(--orange);
+  margin-bottom: 1rem;
+}
+
+.form-section p {
+  max-width: 800px;
+  margin: auto;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-section iframe {
+  width: 100%;
+  min-height: 3200px;
+  border: none;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .form-section iframe {
+    min-height: 3500px;
+  }
+}
+
+/* ==== SMOOTH SCROLL ==== */
+html {
+  scroll-behavior: smooth;
+}
