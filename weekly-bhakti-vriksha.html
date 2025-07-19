@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Weekly Bhakti Vriksha</title>
-  <link rel="stylesheet" href="activities.css" />
+  <link rel="stylesheet" href="wbv.css" />
 </head>
 <body>
 
@@ -20,14 +20,18 @@
     <h1>Weekly Bhakti Vriksha</h1>
   </section>
 
-  <!-- Slideshow Section -->
-  <section class="slideshow-section">
-    <div class="slideshow-container">
-      <div class="slide fade"><img src="images/activity1.jpg" alt="Activity Image 1"></div>
-      <div class="slide fade"><img src="images/activity2.jpg" alt="Activity Image 2"></div>
-      <div class="slide fade"><img src="images/activity3.jpg" alt="Activity Image 3"></div>
+<!-- Slideshow Section -->
+<section class="slideshow-section">
+  <div class="slideshow-container">
+    <div class="slides-wrapper" id="slidesWrapper">
+      <div class="slide"><img src="https://i.ibb.co/B5QFTB32/IMG-20250102-WA0004.jpg" alt="Activity Image 1" /></div>
+      <div class="slide"><img src="https://i.ibb.co/T50KJGc/image.png" alt="Activity Image 2" /></div>
+      <div class="slide"><img src="https://i.ibb.co/RGLQyP7Q/image.png" alt="Activity Image 3" /></div>
+      <div class="slide"><img src="https://i.ibb.co/mrT0tjY5/image.png" alt="Activity Image 4" /></div>
     </div>
-  </section>
+    <div class="dots" id="dots"></div>
+  </div>
+</section>
 
   <!-- Activity Information -->
   <section class="activity-info">
@@ -44,25 +48,64 @@
   <section class="form-section" id="form-section">
     <h3>Join Weekly Bhakti Vriksha</h3>
     <p>We're grateful for your interest in joining our Bhakti-Vriksha family! This simple confidential form will connect you with a like-minded devotional group in your local area, where caring guidance and spiritual growth await.</p>
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfSd8Z5yJ-lwRFhEJwmm2yoYOCAldQJxq472u_9Ai4I09vuvg/viewform?embedded=true" width="100%" height="1800" frameborder="0" style="border:none; overflow:hidden;">Loading…</iframe>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSchIU0DJyfJ8eMXl4opfqSLGuHuVoM9KmhqgzqWTCb6flHouw/viewform?embedded=true" width="100%" height="1800" frameborder="0" style="border:none; overflow:hidden;">Loading…</iframe>
   </section>
 
-  <!-- Slideshow Script -->
-  <script>
-    let slideIndex = 0;
-    showSlides();
+<!-- Slideshow Script -->
+<script>
+  const slidesWrapper = document.getElementById("slidesWrapper");
+  const totalSlides = document.querySelectorAll(".slide").length;
+  const dotsContainer = document.getElementById("dots");
+  let slideIndex = 0;
+  let timer;
 
-    function showSlides() {
-      let slides = document.getElementsByClassName("slide");
-      for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-      slideIndex++;
-      if (slideIndex > slides.length) { slideIndex = 1; }
-      slides[slideIndex - 1].style.display = "block";
-      setTimeout(showSlides, 3000);
-    }
-  </script>
+  function updateSlidePosition() {
+    const offset = -slideIndex * 100;
+    slidesWrapper.style.transform = `translateX(${offset}%)`;
+    updateDots();
+  }
 
+  function autoSlide() {
+    slideIndex = (slideIndex + 1) % totalSlides;
+    updateSlidePosition();
+    timer = setTimeout(autoSlide, 5000);
+  }
+
+  function goToSlide(index) {
+    clearTimeout(timer);
+    slideIndex = index;
+    updateSlidePosition();
+    timer = setTimeout(autoSlide, 5000);
+  }
+
+  function updateDots() {
+    const dots = document.querySelectorAll(".dot");
+    dots.forEach(dot => dot.classList.remove("active"));
+    if (dots[slideIndex]) dots[slideIndex].classList.add("active");
+  }
+
+  // Generate dots
+  for (let i = 0; i < totalSlides; i++) {
+    const dot = document.createElement("span");
+    dot.classList.add("dot");
+    dot.addEventListener("click", () => goToSlide(i));
+    dotsContainer.appendChild(dot);
+  }
+
+  // Touch gesture for mobile
+  let startX = 0;
+  slidesWrapper.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].clientX;
+  });
+
+  slidesWrapper.addEventListener("touchend", (e) => {
+    let endX = e.changedTouches[0].clientX;
+    if (startX - endX > 50) goToSlide((slideIndex + 1) % totalSlides); // swipe left
+    else if (endX - startX > 50) goToSlide((slideIndex - 1 + totalSlides) % totalSlides); // swipe right
+  });
+
+  updateSlidePosition();
+  timer = setTimeout(autoSlide, 5000);
+</script>
 </body>
 </html>
