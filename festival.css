@@ -74,12 +74,15 @@
   min-width: 100%;
   height: 100%;
   flex-shrink: 0;
+  overflow: hidden;
+  position: relative;
 }
 
 .slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center center;
   display: block;
 }
 
@@ -170,4 +173,40 @@
 .donate-now-btn:hover {
   background-color: #b91c30;
   transform: scale(1.05);
+}
+.festival-heading-with-image {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.festival-image-block {
+  width: 200px;
+  height: 200px;
+  border-radius: 30px;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.festival-image-block img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.festival-heading {
+  font-size: 1.5rem;
+  color: var(--deep-red);
+}
+
+@media (max-width: 600px) {
+  .festival-heading-with-image {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 }
