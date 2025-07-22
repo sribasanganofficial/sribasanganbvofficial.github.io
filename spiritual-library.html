@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spiritual Library | Sribas Angan Bhakti Vriksha</title>
+  <link rel="stylesheet" href="spiritual-library.css" />
+</head>
+    <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="logo">
+      <img src="https://i.ibb.co/23hStqkk/sribas-angan-logo.png" alt="Sribas Angan Logo">
+    </div>
+    <div class="back-button">
+      <a href="index.html">← Back</a>
+    </div>
+  </nav>
+
+<body>
+  <header class="hero-library">
+    <h1>Welcome to the Sribas Angan Spiritual Library</h1>
+    <p>Explore, Engage, and Elevate your consciousness with timeless Vedic wisdom.</p>
+  </header>
+
+  <main class="library-content">
+
+    <section class="library-section">
+      <h2>Why Read Vedic Scriptures?</h2>
+      <p>The Vedic scriptures are not just religious texts—they are spiritual manuals that guide us through the complexities of life, offering eternal truths. Reading them connects us with divine wisdom and purifies the heart.</p>
+      <blockquote>"We are not reading these books just for theoretical knowledge. This is practical knowledge, and you should apply it in your life." — Srila Prabhupada</blockquote>
+    </section>
+<a href="#bookForm" class="scroll-to-form-btn">📩 Get Involved – Buy / Sponsor / Donate</a>
+    <!-- Book Section -->
+    <section class="book-gallery">
+      <h2>Explore Our Collection</h2>
+      <div class="books-container">
+        <div class="book">
+          <img src="https://i.ibb.co/fVvyh40M/image.png" alt="Bhagavad Gita" onclick="expandImage(this)" />
+          <h3>Bhagavad Gita</h3>
+          <p>The Bhagavad Gita, spoken directly by Lord Krishna to Arjuna, reveals the essence of Vedic philosophy. It addresses duty, karma, the self, and devotion in the context of life’s challenges. <em>"Whenever there is a decline in religion and a rise in irreligion, O Arjuna, I descend Myself."</em>
+— Bhagavad Gita 4.7</p> <blockquote>"Bhagavad-gītā is the essence of all Vedic knowledge. It is a conversation between the Lord and His devotee." — Srila Prabhupada</blockquote>
+        </div>
+        <div class="book">
+          <img src="https://i.ibb.co/Wv7H8VwD/image.png" alt="Srimad Bhagavatam" onclick="expandImage(this)" />
+          <h3>Śrīmad-Bhāgavatam</h3>
+          <p>Śrīmad-Bhāgavatam is known as the ripened fruit of all Vedic literature. It provides detailed accounts of Lord Krishna’s pastimes, the avatars, and deep philosophical discourses. <em>"This Bhāgavatam is the literary incarnation of God, and it is compiled by Śrīla Vyāsadeva, the incarnation of God."</em></p>
+        <blockquote>"Srimad-Bhagavatam is meant for persons who are seriously desiring to get out of the clutches of material life." — Srila Prabhupada</blockquote>  
+        </div>
+        <div class="book">
+          <img src="https://i.ibb.co/Q7DRNFN7/image.png" alt="Chaitanya Charitamrita" onclick="expandImage(this)" />
+          <h3>Chaitanya Charitāmṛta</h3>
+          <p>Śrī Chaitanya Charitāmṛta is the principal work detailing the life and teachings of Lord Chaitanya Mahaprabhu, written by Krishnadasa Kaviraja Goswami in the 16th century. It is regarded as a post-graduate study in devotional service, beautifully combining deep philosophical truths, ecstatic pastimes, and the process of pure bhakti-yoga. <em>“One should chant the holy name of the Lord in a humble state of mind, thinking oneself lower than the straw in the street; one should be more tolerant than a tree, devoid of all sense of false prestige, and ready to offer all respect to others. In such a state of mind one can chant the holy name of the Lord constantly.”
+— Cc. Ādi 17.31 / Śikṣāṣṭaka 3</em></p>
+        <blockquote>“The Chaitanya Charitāmṛta is not theoretical — it is the living teaching of Lord Chaitanya Mahaprabhu, meant to be practiced and shared. It is a treasure for those who want to deeply understand the loving relationship between the soul and Krishna.” — Srila Prabhupada</blockquote>  
+        </div>
+        <!-- Add more books similarly -->
+      </div>
+    </section>
+
+    <section class="library-section">
+      <h2>Books by Śrīla Prabhupāda – Illuminating the Path</h2>
+      <p>Śrīla Prabhupāda's books make ancient Vedic wisdom accessible to the modern reader. Through translations and detailed purports, he guides the reader toward practical spiritual realization.</p>
+      <ul>
+  <li>The Science of Self Realization</li>
+  <li>Journey of Self-Discovery</li>
+  <li>Nectar of Devotion</li>
+  <li>Perfect Questions, Perfect Answers</li>
+</ul>
+      <blockquote>"In every town and village, the chanting of My name will be heard." — Cc. Ādi 17.31</blockquote>
+     <blockquote> "Distribute books, distribute books, distribute books! This is the essence of our movement." — Srila Prabhupada</blockquote>
+    </section>
+
+    <section class="library-section">
+      <h2>How to Use the Virtual Library</h2>
+      <p>Click on any book cover to expand and view it clearly. Read through the descriptions and get inspired to dive deep into these spiritual treasures.</p>
+    </section>
+
+  </main>
+
+  <div class="image-modal" id="imageModal" onclick="this.style.display='none'">
+    <span class="close">×</span>
+    <img class="modal-content" id="modalImage">
+  </div>
+
+  <script>
+    function expandImage(img) {
+      const modal = document.getElementById("imageModal");
+      const modalImg = document.getElementById("modalImage");
+      modal.style.display = "block";
+      modalImg.src = img.src;
+    }
+  </script>
+  <script>
+  let lastScrollTop = 0;
+  const navbar = document.getElementById("navbar");
+
+  window.addEventListener("scroll", function () {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop) {
+      // Scrolling down
+      navbar.style.top = "-80px"; // hide navbar
+    } else {
+      // Scrolling up
+      navbar.style.top = "0";
+    }
+
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // avoid negative
+  }, false);
+</script>
+<!-- ===== FORM SECTION ===== -->
+<section class="form-section" id="bookForm">
+  <h2>Support Our Spiritual Library</h2>
+  <p>Fill out the form below to buy, sponsor, or donate spiritual books from Sribas Angan Bhakti Vriksha.</p>
+
+  <form action="https://api.web3forms.com/submit" method="POST" class="book-action-form">
+    <input type="hidden" name="access_key" value="8b1d3df6-bd5b-461a-ace2-d9cd7bf11a54">
+    <input type="hidden" name="subject" value="Spiritual Library Books Enroll">
+
+    <label for="name">Full Name</label>
+    <input type="text" name="name" required placeholder="Your Name">
+    
+    <label for="phone">Phone Number</label>    
+    <input type="tel" name="phone" placeholder="Phone Number" required />
+
+    <label for="email">Email Address</label>
+    <input type="email" name="email" required placeholder="you@example.com">
+
+    <label for="action">I want to:</label>
+    <select name="action" required>
+      <option value="">Select an option</option>
+      <option value="buy">Buy Books</option>
+      <option value="sponsor">Sponsor Books</option>
+      <option value="donate">Donate Books</option>
+    </select>
+
+    <label for="message">Type book name</label>
+    <textarea name="message" rows="4" placeholder="Any specific book you want?"></textarea>
+
+    <button type="submit">Submit</button>
+  </form>
+   <div id="formSuccessMessage" class="success-message hidden">
+  <span id="closeSuccess" class="close-success">&times;</span>
+  🎉 Thank you for enrolling! We'll get back to you shortly.
+</div>
+</section>
+  <footer>
+    <p>© 2025 Sribas Angan Bhakti Vriksha</p>
+  </footer>
+<script>
+  const form = document.querySelector(".enroll-form");
+  const successMsg = document.getElementById("formSuccessMessage");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+      method: form.method,
+      body: formData,
+      headers: { Accept: "application/json" }
+    }).then(response => {
+      if (response.ok) {
+        setTimeout(() => {
+  successMsg.classList.add("hidden");
+  form.classList.remove("hidden"); // Optional
+}, 5000); // Closes after 5 seconds
+
+        form.reset();
+        form.classList.add("hidden");
+        successMsg.classList.remove("hidden");
+      } else {
+        successMsg.textContent = "❗ Something went wrong. Please try again later.";
+        successMsg.classList.remove("hidden");
+      }
+    }).catch(() => {
+      successMsg.textContent = "❗ Network error. Please check your connection.";
+      successMsg.classList.remove("hidden");
+    });
+  });
+  const closeSuccessBtn = document.getElementById("closeSuccess");
+
+closeSuccessBtn.addEventListener("click", () => {
+  successMsg.classList.add("hidden");
+  form.classList.remove("hidden"); // Optional: show the form again if needed
+});
+
+</script>
+
+</body>
+</html>
