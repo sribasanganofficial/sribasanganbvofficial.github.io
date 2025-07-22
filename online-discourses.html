@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Online Discourses – Sribas Angan Bhakti Vriksha</title>
+  <link rel="stylesheet" href="online-discourses.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+      <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="logo">
+      <img src="https://i.ibb.co/23hStqkk/sribas-angan-logo.png" alt="Sribas Angan Logo">
+    </div>
+    <div class="back-button">
+      <a href="index.html">← Back</a>
+    </div>
+  </nav>
+
+<body>
+
+  <!-- Hero Section -->
+  <section class="hero-discourses">
+    <div class="hero-content">
+      <h1>Online Discourses</h1>
+      <p>Join live spiritual talks, video classes, and Q&A sessions through our online platforms.</p>
+    </div>
+  </section>
+
+  <!-- Social Media Section -->
+  <section class="social-section">
+    <h2>Join Us on Social Media</h2>
+    <div class="social-links">
+
+      <a href="https://www.youtube.com/@dhakuriabhaktivrikshaoffic7120" target="_blank" class="social-card youtube">
+        <i class="fab fa-youtube"></i>
+        <h3>YouTube Channel</h3>
+        <p>Watch inspiring talks and kirtans</p>
+      </a>
+
+      <a href="https://www.facebook.com/profile.php?id=100088696590866" target="_blank" class="social-card facebook">
+        <i class="fab fa-facebook"></i>
+        <h3>Facebook Page</h3>
+        <p>Get daily updates and event announcements</p>
+      </a>
+
+      <a href="https://www.instagram.com/sribas_angan_bhakti_vriksha/" target="_blank" class="social-card instagram">
+        <i class="fab fa-instagram"></i>
+        <h3>Instagram</h3>
+        <p>Follow our devotional arts & media</p>
+      </a>
+
+      <a href="https://whatsapp.com/channel/0029VbAuqcK3rZZURMuRxy42" target="_blank" class="social-card whatsapp">
+        <i class="fab fa-whatsapp"></i>
+        <h3>WhatsApp Channel</h3>
+        <p>Quick updates & meditation reminders</p>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- Zoom & Private Group Section -->
+  <section class="zoom-section">
+    <h2>Exclusive Zoom Classes</h2>
+    <p>We host regular live Zoom classes and discussions. The link is only available to enrolled members.</p>
+    <p>By enrolling, you’ll also be added to our private WhatsApp group for deeper discussions and updates.</p>
+    <a href="weekly-bhakti-vriksha.html#form-section" class="enroll-btn">Enroll to Access Zoom Classes</a>
+  </section>
+
+  <!-- Note Section -->
+  <section class="note-section">
+    <p>🔒 The Zoom class link and private WhatsApp group are shared only after enrollment via the Weekly Bhakti Vriksha form.</p>
+  </section>
+  <script>
+  let lastScrollTop = 0;
+  const navbar = document.getElementById("navbar");
+
+  window.addEventListener("scroll", function () {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop) {
+      // Scrolling down
+      navbar.style.top = "-80px"; // hide navbar
+    } else {
+      // Scrolling up
+      navbar.style.top = "0";
+    }
+
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // avoid negative
+  }, false);
+</script>
+</body>
+</html>
