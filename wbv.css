@@ -148,18 +148,112 @@
   margin-bottom: 1.5rem;
 }
 
-.form-section iframe {
-  width: 100%;
-  min-height: 1800px;
-  border: none;
-  overflow: hidden;
+form {
+  max-width: 600px;
+  margin: 40px auto;
+  background: #fff9e6;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', sans-serif;
 }
 
-@media (max-width: 768px) {
-  .form-section iframe {
-    min-height: 2000px;
+form h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #a37c40;
+}
+
+form label {
+  display: block;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+form textarea {
+  resize: vertical;
+}
+
+form button {
+  margin-top: 20px;
+  background-color: #f08700;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #d7263d;
+}
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+  max-width: 600px;
+  width: 100%;
+}
+
+.checkbox-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  padding: 6px 10px;
+  border: 1px solid #f0f0f0;
+  border-radius: 6px;
+  background-color: #fff9ec;
+}
+
+.checkbox-row span {
+  font-size: 16px;
+  color: #222;
+}
+
+.checkbox-row input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.other-activity-input {
+  display: none;
+  margin-top: 8px;
+}
+
+.other-activity-input input {
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* RESPONSIVE: Stack neatly on smaller screens */
+@media (max-width: 500px) {
+  .checkbox-row {
+    grid-template-columns: 1fr auto;
+    font-size: 15px;
+  }
+
+  .checkbox-row input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
   }
 }
+
 .dots {
   position: absolute;
   bottom: 10px;

@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Devotional Arts & Training</title>
+  <link rel="stylesheet" href="devotional-arts.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <a href="index.html#activities" class="back-button">← Back to Activities</a>
+    <div class="nav-title">Devotional Arts & Training</div>
+  </nav>
+
+  <!-- Kids Section -->
+  <section class="section kids-section" id="kids-section">
+    <h2>🌸 Youth & Kids Programs</h2>
+    <div class="text-media-wrapper">
+      <div class="text">
+        <p>
+          At Sribas Angan Bhakti Vriksha, we nurture spirituality in children through engaging and joyful experiences.
+          Our <strong>Youth & Kids Programs</strong> are specially designed for young minds to absorb timeless values in a fun and creative way.
+          Children learn through interactive storytelling from the Ramayana and Mahabharata, chanting slokas, devotional drawing and coloring,
+          and cultural arts like classical dance. These sessions spark curiosity about Krishna consciousness while building compassion,
+          discipline, and devotion from a young age.
+        </p>
+        <p>
+          🌱 <em>Let your child’s heart grow in the garden of devotion.</em>
+        </p>
+<button class="open-enroll-form animated-enroll-btn">🌸 Enroll My Child in Kids’ Bhakti Classes</button>
+      </div>
+<!-- Slideshow Section -->
+ <div class="slideshow-section">
+  <div class="slideshow-container">
+    <div class="slides-wrapper" id="slidesWrapper">
+      <div class="slide"><img src="https://i.ibb.co/jvpMzx53/image.png" alt="Activity Image 1" /></div>
+      <div class="slide"><img src="https://i.ibb.co/sd4Xt93k/image.png" alt="Activity Image 2" /></div>
+      <div class="slide"><img src="https://i.ibb.co/HDHxvKtw/image.png" alt="Activity Image 3" /></div>
+      <div class="slide"><img src="https://i.ibb.co/Z1XnYPGz/image.png" alt="Activity Image 4" /></div>
+      <div class="slide"><img src="https://i.ibb.co/39V0VNvd/Whats-App-Image-2025-07-21-at-3-06-35-PM.jpg" alt="Activity Image 4" /></div>
+    </div>
+    <div class="dots" id="dots"></div>
+  </div>
+  </section>
+
+  <!-- Youth Section -->
+  <section class="section youth-section" id="youth-section">
+    <h2>🎶 Devotional Arts & Training for Youth</h2>
+    <div class="text-media-wrapper">
+      <div class="text">
+        <p>
+          In today’s fast-paced world, young minds often seek purpose, passion, and a sense of belonging. At <strong>Sribas Angan Bhakti Vriksha</strong>,
+          we offer a unique spiritual journey through <strong>Devotional Arts & Training</strong>, where creativity meets divinity.
+        </p>
+        <p>
+          🎤 Singing bhajans refines musical ability while connecting the heart to the divine.  
+          🪘 Playing mridanga and harmonium introduces rhythm and melody that powerfully elevate group kirtans.  
+          💃 Devotional dance turns the body into a graceful offering of love.
+        </p>
+        <p>
+          These sessions are especially designed for the youth—with emphasis on joy, community, and spiritual transformation.
+          Whether musically inclined or simply curious, all are welcome. No prior experience required!
+        </p>
+        <p>
+          🌟 <em>Discover your inner voice. Play for a higher cause. Dance your way to devotion.</em>
+        </p>
+<button class="open-enroll-form animated-enroll-btn">🎶 Begin My Spiritual Training</button>
+      </div>
+    </div>
+    <!-- Second Slideshow -->
+<div class="slideshow-section">
+  <div class="slideshow-container">
+    <div class="slides-wrapper" id="slidesWrapper2">
+      <div class="slide2"><img src="https://i.ibb.co/BHXrqQNz/image.png" alt="Slide 1" /></div>
+      <div class="slide2"><img src="https://i.ibb.co/QjFMrCWT/image.png" alt="Slide 2" /></div>
+      <div class="slide2"><img src="https://i.ibb.co/k63Gt1qj/image.png" alt="Slide 3" /></div>
+    </div>
+    <div class="dots" id="dots2"></div>
+  </div>
+</div>
+    </div>
+<div class="skills-grid">
+    <div class="skill-card" data-modal="modal-drawing"><i class="fas fa-palette"></i><p>Devotional Drawing</p></div>
+    <div class="skill-card" data-modal="modal-sloka"><i class="fas fa-book-open"></i><p>Sloka Recitation</p></div>
+    <div class="skill-card" data-modal="modal-drama"><i class="fas fa-theater-masks"></i><p>Drama & Devotional Theater</p></div>
+  <div class="skill-card" data-modal="modal-bhajan"><i class="fas fa-microphone"></i><p>Bhajan Singing</p></div>
+  <div class="skill-card" data-modal="modal-mridanga"><i class="fas fa-drum"></i><p>Mridanga</p></div>
+  <div class="skill-card" data-modal="modal-harmonium"><i class="fas fa-keyboard"></i><p>Harmonium</p></div>
+  <div class="skill-card" data-modal="modal-dance"><i class="fas fa-child-reaching"></i><p>Devotional Dance</p></div>
+</div>
+
+  </section>
+
+<!-- Slideshow Script -->
+<script>
+  const slidesWrapper = document.getElementById("slidesWrapper");
+  const totalSlides = document.querySelectorAll(".slide").length;
+  const dotsContainer = document.getElementById("dots");
+  let slideIndex = 0;
+  let timer;
+
+  function updateSlidePosition() {
+    const offset = -slideIndex * 100;
+    slidesWrapper.style.transform = `translateX(${offset}%)`;
+    updateDots();
+  }
+
+  function autoSlide() {
+    slideIndex = (slideIndex + 1) % totalSlides;
+    updateSlidePosition();
+    timer = setTimeout(autoSlide, 5000);
+  }
+
+  function goToSlide(index) {
+    clearTimeout(timer);
+    slideIndex = index;
+    updateSlidePosition();
+    timer = setTimeout(autoSlide, 5000);
+  }
+
+  function updateDots() {
+    const dots = document.querySelectorAll(".dot");
+    dots.forEach(dot => dot.classList.remove("active"));
+    if (dots[slideIndex]) dots[slideIndex].classList.add("active");
+  }
+
+  // Generate dots
+  for (let i = 0; i < totalSlides; i++) {
+    const dot = document.createElement("span");
+    dot.classList.add("dot");
+    dot.addEventListener("click", () => goToSlide(i));
+    dotsContainer.appendChild(dot);
+  }
+
+  // Touch gesture for mobile
+  let startX = 0;
+  slidesWrapper.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].clientX;
+  });
+
+  slidesWrapper.addEventListener("touchend", (e) => {
+    let endX = e.changedTouches[0].clientX;
+    if (startX - endX > 50) goToSlide((slideIndex + 1) % totalSlides); // swipe left
+    else if (endX - startX > 50) goToSlide((slideIndex - 1 + totalSlides) % totalSlides); // swipe right
+  });
+
+  updateSlidePosition();
+  timer = setTimeout(autoSlide, 5000);
+</script>
+        <script>
+  const slidesWrapper2 = document.getElementById("slidesWrapper2");
+  const totalSlides2 = document.querySelectorAll(".slide2").length;
+  const dotsContainer2 = document.getElementById("dots2");
+  let slideIndex2 = 0;
+  let timer2;
+
+  function updateSlidePosition2() {
+    const offset = -slideIndex2 * 100;
+    slidesWrapper2.style.transform = `translateX(${offset}%)`;
+    updateDots2();
+  }
+
+  function autoSlide2() {
+    slideIndex2 = (slideIndex2 + 1) % totalSlides2;
+    updateSlidePosition2();
+    timer2 = setTimeout(autoSlide2, 5000);
+  }
+
+  function goToSlide2(index) {
+    clearTimeout(timer2);
+    slideIndex2 = index;
+    updateSlidePosition2();
+    timer2 = setTimeout(autoSlide2, 5000);
+  }
+
+  function updateDots2() {
+    const dots = document.querySelectorAll("#dots2 .dot");
+    dots.forEach(dot => dot.classList.remove("active"));
+    if (dots[slideIndex2]) dots[slideIndex2].classList.add("active");
+  }
+
+  // Generate dots
+  for (let i = 0; i < totalSlides2; i++) {
+    const dot = document.createElement("span");
+    dot.classList.add("dot");
+    dot.addEventListener("click", () => goToSlide2(i));
+    dotsContainer2.appendChild(dot);
+  }
+
+  // Swipe support for second slideshow
+  let startX2 = 0;
+  slidesWrapper2.addEventListener("touchstart", (e) => {
+    startX2 = e.touches[0].clientX;
+  });
+
+  slidesWrapper2.addEventListener("touchend", (e) => {
+    let endX2 = e.changedTouches[0].clientX;
+    if (startX2 - endX2 > 50) goToSlide2((slideIndex2 + 1) % totalSlides2); // left
+    else if (endX2 - startX2 > 50) goToSlide2((slideIndex2 - 1 + totalSlides2) % totalSlides2); // right
+  });
+
+  updateSlidePosition2();
+  timer2 = setTimeout(autoSlide2, 5000);
+</script>
+
+<!-- ENROLLMENT MODAL FORM -->
+<div id="enrollModal" class="modal hidden">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+
+    <h3>Join Our Devotional Arts & Training Program</h3>
+
+    <form action="https://api.web3forms.com/submit" method="POST" class="enroll-form">
+      <input type="hidden" name="access_key" value="8b1d3df6-bd5b-461a-ace2-d9cd7bf11a54">
+      <input type="hidden" name="subject" value="New Devotional Arts & Training Enrollment">
+
+      <input type="text" name="name" placeholder="Full Name" required />
+      <input type="number" name="age" placeholder="Age" required />
+      <input type="email" name="email" placeholder="Email Address" required />
+      <input type="tel" name="phone" placeholder="Phone Number" required />
+      <input type="text" name="interested_in" placeholder="What would you like to learn?" required />
+      <textarea name="message" rows="4" placeholder="Any message or inquiry?"></textarea>
+
+      <button type="submit" class="submit-btn">Submit & Join</button>
+    </form>
+    <div id="formSuccessMessage" class="success-message hidden">
+  <span id="closeSuccess" class="close-success">&times;</span>
+  🎉 Thank you for enrolling! We'll get back to you shortly.
+</div>
+
+  </div>
+</div>
+<script>
+  const openBtns = document.querySelectorAll(".open-enroll-form");
+  const modal = document.getElementById("enrollModal");
+  const closeBtn = document.querySelector(".close-modal");
+
+  openBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      modal.classList.remove("hidden");
+    });
+  });
+
+  closeBtn.addEventListener("click", () => {
+    modal.classList.add("hidden");
+  });
+
+  window.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.classList.add("hidden");
+    }
+  });
+</script>
+<!-- Modals -->
+  <div id="modal-drawing" class="skill-modal hidden">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <div class="modal-heading-with-image">
+    <div class="modal-image-block">
+      <img src="https://i.ibb.co/1YC9XgrY/image.png" alt="Drawing Icon" class="modal-icon">
+    </div>
+    <h3 class="modal-heading">Drawing</h3>
+    <p>Art becomes spiritual when it glorifies the Supreme Lord. In Srila Prabhupada’s words, 
+      <em>"Anything you do for Krishna, that is spiritual. Painting for Krishna, cooking for Krishna, cleaning for Krishna—everything becomes devotional service when offered with love."</em> Through drawing classes at Sribas Angan Bhakti Vriksha, children and youth are encouraged to express their devotion through spiritual art — be it sketching Krishna’s pastimes, Lord Jagannatha’s smile, Radha-Krishna’s divine Leela, or the colorful scenes from the Mahabharata and Ramayana. This sacred form of creativity allows young minds to meditate on Krishna and build a loving relationship with Him, using pencils and colors as tools of bhakti. It enhances focus, deepens scriptural understanding, and fosters the realization that even art can become a powerful path to Krishna consciousness when aligned with seva (service). Let your child’s hands draw devotion — and their hearts will follow.</p>
+  </div>
+</div>
+  </div>
+    <div id="modal-sloka" class="skill-modal hidden">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <div class="modal-heading-with-image">
+    <div class="modal-image-block">
+      <img src="https://i.ibb.co/1YC9XgrY/image.png" alt="Drawing Icon" class="modal-icon">
+    </div>
+    <h3 class="modal-heading">Sloka Recitation</h3>
+    <p><em>"Chanting the verses of the Bhagavad-gītā and Śrīmad-Bhāgavatam with understanding is the foundation of spiritual life."</em> – Srila Prabhupada. Sloka recitation is more than just memorization — it is absorption in transcendental sound vibration. At Sribas Angan Bhakti Vriksha, children and youth are trained to chant Sanskrit verses from the Bhagavad-gītā, Śrīmad-Bhāgavatam, Chaitanya Charitamrita, and other Vedic scriptures with clarity, proper pronunciation, and devotion. Each verse carries divine potency, and through repetition and understanding, participants begin to internalize Krishna’s instructions and the eternal wisdom of the acharyas. Srila Prabhupada emphasized that reciting shlokas helps cultivate a disciplined mind, spiritual strength, and a deeper taste for scripture. It also serves as a powerful means to share Krishna consciousness with others through competitions, stage presentations, and family gatherings. Students are also guided to understand the meaning and context of the slokas they recite, fostering not just retention, but realization. <em>“By simply chanting one verse sincerely, one can attain perfection. Even a child can do it.”</em> – Srila Prabhupada. Through sloka recitation, young minds are connected to the paramparā (disciplic succession) become carriers of Sanātana Dharma in the modern world.</p>
+  </div>
+</div>
+  </div>
+  <div id="modal-drama" class="skill-modal hidden">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <div class="modal-heading-with-image">
+    <div class="modal-image-block">
+      <img src="https://i.ibb.co/xSk9WBH3/image.png" alt="Drawing Icon" class="modal-icon">
+    </div>
+    <h3 class="modal-heading">Drama & Devotional Theater</h3>
+    <p><em>“Dramatic performances of Krishna's pastimes are a powerful method of preaching. They touch the hearts of the audience and awaken their dormant love for God.”</em> — Srila Prabhupada. At Sribas Angan Bhakti Vriksha, we offer training in devotional drama, a spiritually enriching art form that enacts the transcendental pastimes of Lord Krishna, His associates, and the great Vaishnava saints. Through theatrical storytelling, students learn to express devotion through emotion, expression, and sacred narration, engaging their hearts and minds in Krishna consciousness. Participants perform plays on major festivals like Janmashtami, Gaura Purnima, and Ratha Yatra, bringing Vedic stories alive with authentic scripts, traditional costumes, and devotional music. Each act becomes a form of seva (service)—offering one’s creativity and effort to please the Lord and spiritually uplift the audience. Drama training fosters confidence, teamwork, memory, and storytelling skills, while grounding youth in bhakti values. Whether it's portraying Krishna’s childhood lilas, the humility of Haridas Thakur, or the wisdom of Prahlada Maharaj, each role becomes a medium for self-transformation. <em>“When a devotee performs with devotion, Krishna personally accepts that offering — even if it's a drama, dance, or song.”</em> — Inspired by Prabhupada’s teachings. This sacred art is not just entertainment, but a preaching tool—meant to inspire devotion, educate the community, and cultivate consciousness in hearts young and old.</p>
+  </div>
+</div>
+  </div>
+<div id="modal-bhajan" class="skill-modal hidden">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <div class="modal-heading-with-image">
+    <div class="modal-image-block">
+      <img src="https://i.ibb.co/BHV6FbM6/image.png" alt="Bhajan Singing Icon" class="modal-icon">
+    </div>
+    <h3 class="modal-heading">Bhajan Singing</h3>
+    <p><em>"The chanting of Hare Krishna is not a material sound. It is spiritual and it purifies the heart."</em> — this was Srila Prabhupada’s loving instruction to the world. Bhajan singing is not merely a musical art, but a heartfelt expression of devotion to Lord Krishna. In our training, youths learn to sing traditional Vaishnava bhajans written by great saints like Narottama Dasa Thakura, Bhaktivinoda Thakura, and Srila Prabhupada. Emphasis is placed on clear pronunciation, mood, and the meditative power of the holy names. Through regular practice, students develop a deep connection with the divine and cultivate inner peace and joy. Singing becomes seva — a spiritual offering that purifies the heart and inspires others on their devotional path. Through this seva, participants experience spiritual elevation, as described in the scriptures — <em>“kirtanād eva kṛṣṇasya... mukta-saṅgaḥ paraṁ vrajet”</em> — “Simply by chanting the names of Krishna, one is liberated.” Bhajan singing becomes not performance, but a sacred offering from heart to the lotus feet of the Lord.</p>
+  </div>
+</div>
+  </div>
+<div id="modal-mridanga" class="skill-modal hidden">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <div class="modal-heading-with-image">
+    <div class="modal-image-block">
+      <img src="https://i.ibb.co/9Hz45Y9V/Whats-App-Image-2025-07-18-at-5-50-06-PM.jpg" alt="Mridanga Icon" class="modal-icon">
+    </div>
+    <h3 class="modal-heading">Mridanga</h3>
+    <p><em>"Just as the heartbeat sustains life in the body, the mridanga sustains the rhythm of kirtan — the heartbeat of the soul."</em> - Srila Prabhupad. Master this traditional percussion instrument used in kirtans. Youths are trained in rhythm and devotion to accompany sankirtan performancesThe mridanga drum is the heartbeat of Harinama Sankirtana. It is said that just by hearing the mridanga's rhythmic beat, one's sins are washed away and the soul is awakened. Our training introduces youth to the traditional Bengali mridanga style used in ISKCON kirtans, beginning with foundational bols (rhythmic syllables) and progressing to dynamic kirtan playing. Students are also taught how to accompany bhajans and sankirtan groups in a coordinated and spiritually uplifting manner. This is not just drumming — it’s an act of glorification, a sacred sound that pleases the Lord and spreads His mercy everywhere.</p>
+  </div>
+</div>
+  </div>
+<div id="modal-harmonium" class="skill-modal hidden">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <div class="modal-heading-with-image">
+    <div class="modal-image-block">
+      <img src="https://i.ibb.co/1Ytm6Mpm/Whats-App-Image-2025-07-18-at-5-50-50-PM.jpg" alt="Harmonium Icon" class="modal-icon">
+    </div>
+    <h3 class="modal-heading">Harmonium</h3>
+    <p><em>"Spiritual life begins with sound vibration. If we sincerely chant and hear, our heart becomes purified."</em> – Srila Prabhupada. The harmonium is the melodic soul of devotional music in ISKCON. In our harmonium training sessions, youth learn how to play Vaishnava bhajans, accompany kirtans, and support group singing. Special focus is given to raga structure, hand positioning, and correct breath-like phrasing, making the harmonium an extension of one’s devotion. Many of our teachers were trained by senior ISKCON devotees and bring a spiritual perspective to the art — that music is meant to glorify Krishna and touch hearts. Playing harmonium becomes a sadhana — a devotional practice that purifies the consciousness.</p>
+  </div>
+</div>
+</div>
+<div id="modal-dance" class="skill-modal hidden">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <div class="modal-heading-with-image">
+    <div class="modal-image-block">
+      <img src="https://i.ibb.co/n85kHg5P/Whats-App-Image-2025-07-18-at-5-51-40-PM.jpg" alt="Devotional Dance Icon" class="modal-icon">
+    </div>
+    <h3 class="modal-heading">Devotional Dance</h3>
+    <p><em>"Anything we do for Krishna becomes spiritual. Dancing, singing, clapping — everything is transformed when done with love for Him."</em> – Srila Prabhupada. Dance has always been a divine medium to express love for the Lord — from the Gopis' Ras Lila to Chaitanya Mahaprabhu’s ecstatic kirtans. Our devotional dance training guides young participants to offer their movements as seva to Krishna. From graceful Bharatanatyam-inspired gestures to expressive Vaishnava storytelling through steps, our students learn to embody spiritual themes such as Krishna’s pastimes, Rama’s victories, or Radha’s love. Dance becomes a living expression of shastra, art, and heart. It builds confidence, discipline, and most importantly — joy in spiritual life.</p>
+  </div>
+</div>
+  </div>
+<script>
+  const skillCards = document.querySelectorAll(".skill-card");
+  const modals = document.querySelectorAll(".skill-modal");
+  const closeBtns = document.querySelectorAll(".close-btn");
+
+  skillCards.forEach(card => {
+    card.addEventListener("click", () => {
+      // First, hide all modals
+      modals.forEach(m => m.classList.add("hidden"));
+
+      // Then show the correct one
+      const modalId = card.getAttribute("data-modal");
+      const modal = document.getElementById(modalId);
+      if (modal) modal.classList.remove("hidden");
+    });
+  });
+
+  closeBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      btn.closest(".skill-modal").classList.add("hidden");
+    });
+  });
+
+  // Click outside to close
+  window.addEventListener("click", (e) => {
+    if (e.target.classList.contains("skill-modal")) {
+      e.target.classList.add("hidden");
+    }
+  });
+</script>
+<script>
+  const form = document.querySelector(".enroll-form");
+  const successMsg = document.getElementById("formSuccessMessage");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+      method: form.method,
+      body: formData,
+      headers: { Accept: "application/json" }
+    }).then(response => {
+      if (response.ok) {
+        setTimeout(() => {
+  successMsg.classList.add("hidden");
+  form.classList.remove("hidden"); // Optional
+}, 5000); // Closes after 5 seconds
+
+        form.reset();
+        form.classList.add("hidden");
+        successMsg.classList.remove("hidden");
+      } else {
+        successMsg.textContent = "❗ Something went wrong. Please try again later.";
+        successMsg.classList.remove("hidden");
+      }
+    }).catch(() => {
+      successMsg.textContent = "❗ Network error. Please check your connection.";
+      successMsg.classList.remove("hidden");
+    });
+  });
+  const closeSuccessBtn = document.getElementById("closeSuccess");
+
+closeSuccessBtn.addEventListener("click", () => {
+  successMsg.classList.add("hidden");
+  form.classList.remove("hidden"); // Optional: show the form again if needed
+});
+
+</script>
+
+</body>
+</html>

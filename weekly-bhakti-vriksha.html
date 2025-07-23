@@ -12,7 +12,7 @@
   <!-- Navigation -->
   <div class="navbar">
     <div class="nav-title">Sribas Angan Bhakti Vriksha</div>
-    <a href="index.html" class="back-button">← Back to Home</a>
+    <a href="index.html#activities" class="back-button">← Back to Home</a>
   </div>
 
   <!-- Page Title -->
@@ -48,7 +48,219 @@
   <section class="form-section" id="form-section">
     <h3>Join Weekly Bhakti Vriksha</h3>
     <p>We're grateful for your interest in joining our Bhakti-Vriksha family! This simple confidential form will connect you with a like-minded devotional group in your local area, where caring guidance and spiritual growth await.</p>
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSchIU0DJyfJ8eMXl4opfqSLGuHuVoM9KmhqgzqWTCb6flHouw/viewform?embedded=true" width="100%" height="1800" frameborder="0" style="border:none; overflow:hidden;">Loading…</iframe>
+<form action="https://api.web3forms.com/submit" method="POST">
+  <input type="hidden" name="access_key" value="8b1d3df6-bd5b-461a-ace2-d9cd7bf11a54" />
+  <input type="hidden" name="subject" value="New Devotional Arts & Training Enrollment">
+
+  <h2>Weekly Bhakti Vriksha Enrollment Form</h2>
+
+  <!-- Basic Fields -->
+  <label>Full Name:
+    <input type="text" name="Full Name" required>
+  </label>
+
+  <label>Gender:
+    <select name="Gender" required>
+      <option value="">--Select--</option>
+      <option>Male</option>
+      <option>Female</option>
+      <option>Other</option>
+    </select>
+  </label>
+
+  <label>Age:
+    <input type="number" name="Age" min="1" required>
+  </label>
+
+<div class="form-group">
+  <label for="phone">Phone Number:</label>
+  <input type="text" id="phone" name="phone" />
+</div>
+
+<div class="form-group">
+  <label for="whatsapp">WhatsApp Number:</label>
+  <input type="text" id="whatsapp" name="whatsapp" />
+</div>
+<div class="checkbox-group">
+  <div class="checkbox-row">
+    <span>Same as phone</span>
+    <input type="checkbox" id="sameAsPhone">
+  </div>
+</div>
+  </label>
+
+  <label>Address with Pin Code:
+    <textarea name="Address with Pin Code" required></textarea>
+  </label>
+
+  <label>Educational Qualification:
+    <input type="text" name="Education Qualification" required>
+  </label>
+
+  <label>Occupation:
+    <input type="text" name="Occupation" required>
+  </label>
+
+  <label>Marital Status:
+    <select name="Marital Status" required>
+      <option value="">--Select--</option>
+      <option>Single</option>
+      <option>Married</option>
+      <option>Widowed</option>
+      <option>Divorced</option>
+    </select>
+  </label>
+
+  <!-- Location Select with Conditional Input -->
+  <label>Your Nearest Suitable Location:
+    <select name="Nearest Location" id="location-select" required onchange="toggleOtherLocation(this)">
+      <option value="">--Select--</option>
+      <option>Dhakuria</option>
+      <option>Kasba Acropolis</option>
+      <option>Garfa</option>
+      <option>Picnic Garden</option>
+      <option>Subhasgram</option>
+      <option>Sonarpur</option>
+      <option value="Other">Other</option>
+    </select>
+  </label>
+
+  <div id="other-location-div" style="display:none;">
+    <label>If other, please specify:
+      <input type="text" name="Other Location">
+    </label>
+  </div>
+
+  <!-- ISKCON Class Question with Conditional Input -->
+  <label>Have you taken any ISKCON classes before?
+    <select name="Taken ISKCON Classes" id="iskcon-select" required onchange="toggleDuration(this)">
+      <option value="">--Select--</option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+    </select>
+  </label>
+
+  <div id="duration-div" style="display:none;">
+    <label>If yes, how long? (years/months)
+      <input type="text" name="Duration of ISKCON Classes">
+    </label>
+  </div>
+
+  <!-- Joining Options -->
+  <label>Do you want to join Sribas Angan Bhakti Vriksha?
+    <select name="Want to Join SABV" required>
+      <option value="">--Select--</option>
+      <option>Yes</option>
+      <option>No</option>
+      <option>Need More Info</option>
+    </select>
+  </label>
+
+  <label>What classes are you interested in joining?
+    <input type="text" name="Interested Classes" placeholder="e.g., Gita, Bhagavatam, etc">
+  </label>
+
+<div class="form-group">
+  <label>Are you interested in our activities?</label>
+  <div class="checkbox-group">
+    <div class="checkbox-row">
+      <span>Learning Dance</span>
+      <input type="checkbox" name="activities[]" value="Learning Dance">
+    </div>
+    <div class="checkbox-row">
+      <span>Garland Seva</span>
+      <input type="checkbox" name="activities[]" value="Garland Seva">
+    </div>
+    <div class="checkbox-row">
+      <span>Drawing</span>
+      <input type="checkbox" name="activities[]" value="Drawing">
+    </div>
+    <div class="checkbox-row">
+      <span>Mridanga</span>
+      <input type="checkbox" name="activities[]" value="Mridanga">
+    </div>
+    <div class="checkbox-row">
+      <span>Bhajans & Kirtan (with Harmonium)</span>
+      <input type="checkbox" name="activities[]" value="Bhajans & Kirtan">
+    </div>
+    <div class="checkbox-row">
+      <span>Other:</span>
+      <input type="checkbox" id="otherActivityCheckbox" name="activities[]" value="Other">
+    </div>
+    <div class="other-activity-input">
+      <input type="text" id="otherActivityInput" name="activities_other" placeholder="Please specify" />
+    </div>
+  </div>
+</div>
+  
+<script>
+  const otherCheckbox = document.getElementById('otherActivityCheckbox');
+  const otherInputWrapper = document.querySelector('.other-activity-input');
+
+  otherCheckbox.addEventListener('change', () => {
+    otherInputWrapper.style.display = otherCheckbox.checked ? 'block' : 'none';
+  });
+</script>
+
+
+  <button type="submit">Submit</button>
+</form>
+
+<!-- Scripts -->
+<script>
+  const phoneInput = document.getElementById('phone');
+  const whatsappInput = document.getElementById('whatsapp');
+  const sameAsPhoneCheckbox = document.getElementById('sameAsPhone');
+
+  sameAsPhoneCheckbox.addEventListener('change', () => {
+    if (sameAsPhoneCheckbox.checked) {
+      whatsappInput.value = phoneInput.value;
+    } else {
+      whatsappInput.value = '';
+    }
+  });
+
+  // Optional: Update if phone number changes after checkbox is checked
+  phoneInput.addEventListener('input', () => {
+    if (sameAsPhoneCheckbox.checked) {
+      whatsappInput.value = phoneInput.value;
+    }
+  });
+</script>
+<script>
+  function toggleOtherLocation(select) {
+    const otherLocationDiv = document.getElementById("other-location-div");
+    if (select.value === "Other") {
+      otherLocationDiv.style.display = "block";
+    } else {
+      otherLocationDiv.style.display = "none";
+    }
+  }
+
+  function toggleDuration(select) {
+    const durationDiv = document.getElementById("duration-div");
+    if (select.value === "Yes") {
+      durationDiv.style.display = "block";
+    } else {
+      durationDiv.style.display = "none";
+    }
+  }
+</script>
+<script>
+  // Toggle "Other Activity" text box
+  document.getElementById('otherActivityCheckbox').addEventListener('change', function () {
+    document.getElementById('otherActivityInput').style.display = this.checked ? 'block' : 'none';
+  });
+
+  // Toggle "how long" input for ISKCON class
+  document.getElementById('iskconYes').addEventListener('change', function () {
+    document.getElementById('howLongContainer').style.display = 'block';
+  });
+  document.getElementById('iskconNo').addEventListener('change', function () {
+    document.getElementById('howLongContainer').style.display = 'none';
+  });
+</script>
+
   </section>
 
 <!-- Slideshow Script -->

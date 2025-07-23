@@ -33,6 +33,23 @@ body {
   margin-right: 10px;
 }
 
+/* Social icon container */
+.social-icons a {
+  color: white;
+  margin-right: 10px;
+  font-size: 1.1rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+  display: inline-block;
+}
+
+/* Hover effect */
+.social-icons a:hover {
+  transform: scale(1.2);
+  color: #f4e409; /* or use a color from your theme palette */
+  text-shadow: 0 0 8px #f4e409;
+}
+
+
 /* Navbar */
 .navbar {
   position: relative;
@@ -75,22 +92,101 @@ body {
   font-weight: bold;
   color: white;
 }
+/* Button container inside navbar */
+.nav-buttons {
+  display: flex;
+  flex-shrink: 0;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: nowrap;
+  max-width: 100%;
+  overflow-x: auto;
+  padding-left: 10px;
+}
 
-/* Donate Button */
+/* Ensure anchor tags don’t stretch buttons */
+.nav-buttons a {
+  flex-shrink: 0;
+}
+
+/* JOIN button styles */
+.join-btn {
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--deep-red);
+  border-radius: 30px;
+  color: var(--deep-red);
+  font-weight: bold;
+  background: #ffffff;
+  cursor: pointer;
+  white-space: nowrap;
+  width: auto;
+}
+
+.join-btn:hover {
+  background-color: var(--deep-red);
+  color: white;
+}
+
+/* DONATE button styles */
 .donate-btn {
   padding: 0.5rem 1rem;
   border: 2px solid var(--deep-red);
   border-radius: 30px;
   color: var(--deep-red);
   font-weight: bold;
-  background: transparent;
+  background: #ffffff;
   cursor: pointer;
   white-space: nowrap;
+  width: auto;
 }
 
 .donate-btn:hover {
   background-color: var(--deep-red);
   color: white;
+}
+
+/* Glows */
+.glow-join {
+  animation: glowJoin 1.5s infinite alternate;
+}
+
+@keyframes glowJoin {
+  from {
+    box-shadow: 0 0 5px #f08700, 0 0 10px #f08700;
+  }
+  to {
+    box-shadow: 0 0 10px #f4e409, 0 0 20px #f08700;
+  }
+}
+
+.glow-donate {
+  animation: glowDonate 2s infinite alternate;
+}
+
+@keyframes glowDonate {
+  from {
+    box-shadow: 0 0 5px #d7263d, 0 0 10px #d7263d;
+  }
+  to {
+    box-shadow: 0 0 15px #a3202f, 0 0 30px #d7263d;
+  }
+}
+
+/* Responsive tweak */
+@media (max-width: 768px) {
+  .nav-buttons {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+    margin-top: 10px;
+    padding-right: 10px;
+  }
+
+  .nav-buttons button {
+    width: 100%;
+    max-width: 200px;
+  }
 }
 
 /* Nav Links */
@@ -111,39 +207,140 @@ body {
   padding: 10px 10px 10px 15px;
 }
 
-/* Hero */
-.hero {
-  background-image: url('https://i.ibb.co/99s8HJqh/Katyan-Art-Shop-Redbubble.jpg');
-  background-size: cover;
-  background-position: center;
+/* HERO SECTION STYLING */
+.hero-slider {
   position: relative;
-  height: 80vh;
+  height: 100vh;
+  color: #fff;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  background: url('https://i.ibb.co/FkTZVkTv/Katyan-Art-Shop-Redbubble.jpg') no-repeat center center/cover;
 }
 
-.hero::before {
-  content: "";
+.slider-overlay {
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-color: rgba(244, 228, 9, 0.6);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 249, 228, 0.7);
+  z-index: 1;
 }
 
-.hero-content {
+.slider-container {
   position: relative;
-  color: #333;
-  max-width: 800px;
+  z-index: 2;
+  width: 90%;
+  max-width: 1000px;
 }
 
-.hero-content h1 {
-  font-size: 3rem;
+.slide {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide.active {
+  display: flex;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-family: 'Georgia', serif;
+  color: #4b2c1c;
+  text-shadow: 1px 1px 4px #ffffff;
   margin-bottom: 1rem;
 }
 
-.hero-content p {
-  font-size: 1.2rem;
+.hero-btn {
+  margin-top: 1rem;
+  background: #d7263d;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.hero-btn:hover {
+  background: #a3202f;
+}
+.slide-content {
+  background: rgba(255, 255, 255, 0.75); /* light semi-transparent background */
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.slide-content h1 {
+  color: #a37c40; /* spiritual warm brown title */
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.slide-content p {
+  color: #000; /* black text for readability */
+  font-size: 1.1rem;
+}
+
+/* DOT NAVIGATION */
+.dot-nav {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 14px;
+  height: 14px;
+  background: #f4e409;
+  border-radius: 50%;
+  opacity: 0.6;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.dot.active {
+  opacity: 1;
+  background: #d7263d;
+}
+
+/* SLIDE ANIMATIONS */
+.animate-fade-in { animation: fadeIn 1s ease-in-out; }
+.animate-slide-in-left { animation: slideInLeft 1s ease-in-out; }
+.animate-slide-in-right { animation: slideInRight 1s ease-in-out; }
+.animate-slide-in-bottom { animation: slideInBottom 1s ease-in-out; }
+.animate-fade-in-up { animation: fadeInUp 1s ease-in-out; }
+.animate-zoom-in { animation: zoomIn 1s ease-in-out; }
+.animate-zoom-out { animation: zoomOut 1s ease-in-out; }
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideInLeft { from { transform: translateX(-100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+@keyframes slideInRight { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+@keyframes slideInBottom { from { transform: translateY(100%); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+@keyframes fadeInUp { from { transform: translateY(30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+@keyframes zoomIn { from { transform: scale(0.7); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+@keyframes zoomOut { from { transform: scale(1.2); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+/* RESPONSIVE */
+@media screen and (max-width: 768px) {
+  .hero-title {
+    font-size: 1.8rem;
+  }
+  .hero-btn {
+    padding: 8px 16px;
+  }
 }
 
 /* About Section */
@@ -327,14 +524,141 @@ footer .footer-links a:hover {
     display: none;
   }
 
-  .hero-content h1 {
-    font-size: 2rem;
-  }
+/* HERO SECTION STYLING */
+.hero-slider {
+  position: relative;
+  height: 100vh;
+  color: #fff;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: url('https://i.ibb.co/FkTZVkTv/Katyan-Art-Shop-Redbubble.jpg') no-repeat center center/cover;
+}
 
-  .hero-content p {
-    font-size: 1rem;
-  }
+.slider-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 249, 228, 0.7);
+  z-index: 1;
+}
 
+.slider-container {
+  position: relative;
+  z-index: 2;
+  width: 90%;
+  max-width: 1000px;
+}
+
+.slide {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide.active {
+  display: flex;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-family: 'Georgia', serif;
+  color: #4b2c1c;
+  text-shadow: 1px 1px 4px #ffffff;
+  margin-bottom: 1rem;
+}
+
+.hero-btn {
+  margin-top: 1rem;
+  background: #d7263d;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.hero-btn:hover {
+  background: #a3202f;
+}
+.slide-content {
+  background: rgba(255, 255, 255, 0.75); /* light semi-transparent background */
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.slide-content h1 {
+  color: #a37c40; /* spiritual warm brown title */
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.slide-content p {
+  color: #000; /* black text for readability */
+  font-size: 1.1rem;
+}
+
+/* DOT NAVIGATION */
+.dot-nav {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 14px;
+  height: 14px;
+  background: #f4e409;
+  border-radius: 50%;
+  opacity: 0.6;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.dot.active {
+  opacity: 1;
+  background: #d7263d;
+}
+
+/* SLIDE ANIMATIONS */
+.animate-fade-in { animation: fadeIn 1s ease-in-out; }
+.animate-slide-in-left { animation: slideInLeft 1s ease-in-out; }
+.animate-slide-in-right { animation: slideInRight 1s ease-in-out; }
+.animate-slide-in-bottom { animation: slideInBottom 1s ease-in-out; }
+.animate-fade-in-up { animation: fadeInUp 1s ease-in-out; }
+.animate-zoom-in { animation: zoomIn 1s ease-in-out; }
+.animate-zoom-out { animation: zoomOut 1s ease-in-out; }
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideInLeft { from { transform: translateX(-100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+@keyframes slideInRight { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+@keyframes slideInBottom { from { transform: translateY(100%); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+@keyframes fadeInUp { from { transform: translateY(30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+@keyframes zoomIn { from { transform: scale(0.7); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+@keyframes zoomOut { from { transform: scale(1.2); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+/* RESPONSIVE */
+@media screen and (max-width: 768px) {
+  .hero-title {
+    font-size: 1.8rem;
+  }
+  .hero-btn {
+    padding: 8px 16px;
+  }
+}
   .service-items {
     flex-direction: column;
     align-items: center;
@@ -345,7 +669,6 @@ footer .footer-links a:hover {
   }
 
   .donate-btn {
-    position: absolute;
     top: 10px;
     right: 10px;
     font-size: 0.85rem;
